@@ -4,8 +4,8 @@ import java.sql.Date;
 
 public class ItemHistory {
 	protected Integer id;
-	protected Integer what;
-	protected Date when;
+	protected Integer type;
+	protected Date created;
 	protected String details;
 	protected Integer itemId;
 	protected Integer userId;
@@ -15,17 +15,17 @@ public class ItemHistory {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public Integer getWhat() {
-		return what;
+	public Integer getType() {
+		return type;
 	}
-	public void setWhat(Integer what) {
-		this.what = what;
+	public void setType(Integer type) {
+		this.type = type;
 	}
-	public Date getWhen() {
-		return when;
+	public Date getCreated() {
+		return created;
 	}
-	public void setWhen(Date when) {
-		this.when = when;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 	public String getDetails() {
 		return details;

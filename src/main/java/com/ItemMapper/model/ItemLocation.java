@@ -6,10 +6,10 @@ public class ItemLocation {
 	protected Integer id;
 	protected String longitude;
 	protected String latitude;
-	protected Date whenSet;
+	protected Date created;
 	protected Integer userId;
 	protected Integer itemId;
-	protected Integer howSet;
+	protected Integer type;
 	public Integer getId() {
 		return id;
 	}
@@ -28,11 +28,11 @@ public class ItemLocation {
 	public void setLatitude(String latitude) {
 		this.latitude = latitude;
 	}
-	public Date getWhenSet() {
-		return whenSet;
+	public Date getCreated() {
+		return created;
 	}
-	public void setWhenSet(Date whenSet) {
-		this.whenSet = whenSet;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 	public Integer getUserId() {
 		return userId;
@@ -46,10 +46,10 @@ public class ItemLocation {
 	public void setItemId(Integer itemId) {
 		this.itemId = itemId;
 	}
-	public Integer getHowSet() {
-		return howSet;
+	public Integer getType() {
+		return type;
 	}
-	public void setHowSet(Integer howSet) {
-		this.howSet = howSet;
+	public void setType(Integer type) {
+		this.type = type;
 	}
 }

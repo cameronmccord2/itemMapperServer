@@ -6,7 +6,7 @@ public class ItemOwned {
 	protected Integer id;
 	protected Integer userId;
 	protected Integer itemId;
-	protected Date whenAdded;
+	protected Date created;
 	protected Integer status;
 	public Integer getId() {
 		return id;
@@ -26,11 +26,11 @@ public class ItemOwned {
 	public void setItemId(Integer itemId) {
 		this.itemId = itemId;
 	}
-	public Date getWhenAdded() {
-		return whenAdded;
+	public Date getCreated() {
+		return created;
 	}
-	public void setWhenAdded(Date whenAdded) {
-		this.whenAdded = whenAdded;
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 	public Integer getStatus() {
 		return status;

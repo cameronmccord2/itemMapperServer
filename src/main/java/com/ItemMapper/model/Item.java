@@ -15,7 +15,7 @@ public class Item {
 	protected Integer status;
 	protected String longitude;
 	protected String latitude;
-	protected Date whenSet;
+	protected Date created;
 	public Integer getId() {
 		return id;
 	}
@@ -69,5 +69,23 @@ public class Item {
 	}
 	public void setStatus(Integer status) {
 		this.status = status;
+	}
+	public String getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+	public String getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(String latitude) {
+		this.latitude = latitude;
+	}
+	public Date getCreated() {
+		return created;
+	}
+	public void setCreated(Date created) {
+		this.created = created;
 	}
 }
