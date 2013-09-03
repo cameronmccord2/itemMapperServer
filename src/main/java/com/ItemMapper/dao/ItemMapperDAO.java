@@ -3,18 +3,20 @@ package com.ItemMapper.dao;
 import java.util.List;
 
 import com.ItemMapper.model.DoesUserExist;
-import com.ItemMapper.model.Item;
+import com.ItemMapper.model.ItemListElement;
+import com.ItemMapper.model.ItemLocation;
+import com.ItemMapper.model.NewItem;
 import com.ItemMapper.model.SecurityQuestion;
 import com.ItemMapper.model.Token;
 import com.ItemMapper.model.User;
 
 public abstract interface ItemMapperDAO {
 
-	Item putItem(Item item, String token);
+	ItemListElement putItem(NewItem item, String token);
 
-	List<Item> getAllItemsForUser(String token);
+	List<ItemListElement> getAllItemsForUser(String token);
 
-	List<Item> removeItemFromUser(String itemId, String token);
+	List<ItemListElement> removeItemFromUser(String itemId, String token);
 
 	Token loginUser(String email, String password);
 
@@ -27,6 +29,10 @@ public abstract interface ItemMapperDAO {
 	List<SecurityQuestion> getSecurityQuestions(String email);
 
 	User putUser(User newUser);
+
+	List<ItemLocation> getLocationsForItem(String token, Integer id);
+
+	ItemListElement putNewLocationForExistingItem(ItemLocation location);
 
 	
 //	MissionaryLanguage getMissionaryLanguageByLanguageId(String languageid);

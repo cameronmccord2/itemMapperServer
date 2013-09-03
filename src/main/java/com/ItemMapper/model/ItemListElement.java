@@ -2,11 +2,10 @@ package com.ItemMapper.model;
 
 import java.util.List;
 
-public class Item {
+public class ItemListElement {
 	protected Integer id;
-	protected List<ItemHistory> historyList;
 	protected List<ItemLocation> locationList;
-	protected List<ItemCode> codeList;
+	protected String code;
 	protected String name;
 	protected String userComment;
 	protected Integer status;
@@ -16,23 +15,17 @@ public class Item {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public List<ItemHistory> getHistoryList() {
-		return historyList;
-	}
-	public void setHistoryList(List<ItemHistory> historyList) {
-		this.historyList = historyList;
-	}
 	public List<ItemLocation> getLocationList() {
 		return locationList;
 	}
 	public void setLocationList(List<ItemLocation> locationList) {
 		this.locationList = locationList;
 	}
-	public List<ItemCode> getCodeList() {
-		return codeList;
+	public String getCode() {
+		return code;
 	}
-	public void setCodeList(List<ItemCode> codeList) {
-		this.codeList = codeList;
+	public void setCode(String code) {
+		this.code = code;
 	}
 	public String getName() {
 		return name;

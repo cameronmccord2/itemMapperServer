@@ -1,28 +1,20 @@
 package com.ItemMapper;
 
 import java.util.List;
-import java.util.zip.DataFormatException;
-
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-
 import com.ItemMapper.dao.ItemMapperDAO;
-import com.ItemMapper.model.Item;
+import com.ItemMapper.model.ItemListElement;
+import com.ItemMapper.model.NewItem;
 
 @Controller
 public class ItemsController {
@@ -34,17 +26,17 @@ public class ItemsController {
 	private ItemMapperDAO itemMapperDAO;
 	
 	@RequestMapping(method=RequestMethod.GET, value="/items")
-	public @ResponseBody List<Item> getAllItemsForUser(@RequestHeader("Authorization") String token){
+	public @ResponseBody List<ItemListElement> getAllItemsForUser(@RequestHeader("Authorization") String token){
 		return itemMapperDAO.getAllItemsForUser(token);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/items/{itemId}")
-	public @ResponseBody List<Item> removeItemFromUser(@PathVariable String itemId, @RequestHeader("Authorization") String token){
+	public @ResponseBody List<ItemListElement> removeItemFromUser(@PathVariable String itemId, @RequestHeader("Authorization") String token){
 		return itemMapperDAO.removeItemFromUser(itemId, token);
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/items")
-	public @ResponseBody Item putItem(@RequestBody Item item, @RequestHeader("Authorization") String token){
+	public @ResponseBody ItemListElement putItem(@RequestBody NewItem item, @RequestHeader("Authorization") String token){
 		return itemMapperDAO.putItem(item, token);
 	}
 //	
